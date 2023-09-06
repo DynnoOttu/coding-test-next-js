@@ -1,106 +1,81 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import dummy1 from "../assets/dummy/1.jpg";
-import Link from "next/link";
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
-const url = process.env.NEXT_PUBLIC_BASE_URL;
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [value, setValue] = useState([0, 300]);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+
+  const formData = {
+    email: email,
+    password: password,
   };
-  /* get data */
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    await axios
-      .get(url + `api/users?page=2`)
-      .then((res) => {
-        console.log(res);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const result = await axios.post(
+        "https://reqres.in/api/register",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success("REGISTER SUCCESS");
+      console.log("REGISTER SUCCESS");
+      setTimeout(() => {
+        router.push("/user/user");
         setLoading(false);
-        setData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(true);
-      });
+      }, 3000);
+    } catch (error) {
+      toast.error("Note: Only defined users succeed registration");
+      console.log("REGISTER FAILD", error.response.data);
+      setLoading(false);
+    }
   };
-
   return (
-    <>
-      <div className="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  Home <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Features
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">
-                  Disabled
-                </a>
-              </li>
-            </ul>
+    <div className="register template d-flex justify-content-center align-items-center vh-100 bg-primary">
+      <div className="form-container p-5 rounded bg-white">
+        <form onSubmit={handleRegister}>
+          <h3 className="text-center mb-4">Register</h3>
+          <div className="mb-4">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              placeholder="Enter email"
+              className="form-control"
+              id="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-        </nav>
-
-        {data.map((item, index) => (
-          <div className="container mt-5 mb-5" key={index}>
-            <div className="card" style={{ width: "20rem" }}>
-              <Image
-                src={item.avatar}
-                alt="Card image cap"
-                className="img-fluid card-img-top"
-                width={200}
-                height={200}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{item.email}</h5>
-                <p className="card-text">
-                  {item.first_name} {item.last_name}
-                </p>
-              </div>
-            </div>
+          <div className="mb-5">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              className="form-control"
+              id="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
-        ))}
+          <div className="d-grid">
+            <button className="btn btn-primary">Register</button>
+            <ToastContainer />
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
