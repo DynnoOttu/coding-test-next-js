@@ -1,6 +1,6 @@
 import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,11 +47,8 @@ export default function Home() {
             onSlideChange={() => console.log("slide change")}
           >
             {data.map((item, index) => (
-              <div className="col-sm-4">
-                <div
-                  className="mt-5 shadow-lg p-3 mb-5 bg-body rounded"
-                  key={index}
-                >
+              <div className="col-sm-4" key={index}>
+                <div className="mt-5 shadow-lg p-3 mb-5 bg-body rounded">
                   <SwiperSlide>
                     <div
                       className="card mt-5 mb-5"
