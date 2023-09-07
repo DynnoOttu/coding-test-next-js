@@ -1,38 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center">
+  <h3 align="center">Coding Test PT Bangun Digital Nusantara ( SOLITAIRE )</h3>
+</div>
 
-First, run the development server:
+## USER REGISTER
+- Email: eve.holt@reqres.in
+- Password: pistol
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Screenshoots
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<p align="center" display=flex>
+   
+<table>
+    <tr>
+    <td>Register Page</td>
+    <td>User Page</td>
+  </tr>
+  <tr>
+    <td><image src="https://res.cloudinary.com/dzs9aijqab/image/upload/v1694049672/Screenshot_2023-09-07_at_09-19-52_Screenshot_pib87n.png" alt="Register Page" width=100%></td>
+    <td><image src="https://res.cloudinary.com/dzs9aijqab/image/upload/v1694049675/Screenshot_2023-09-07_at_09-20-36_Screenshot_wyqlal.png" width=100%/></td>
+  </tr>
+  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Developer
 
-## Learn More
+<center>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/DynnoOttu">
+          <img width="100" src="https://res.cloudinary.com/dzs9aijqab/image/upload/v1685061849/recipes/kbgsfitfo3x2aikonhng.jpg" alt="Dynno"><br/>
+          <sub><b>Dynno Yohanis Ottu</b></sub> <br/>
+          <sub>Back End Web Developer | Front End Web Developer | Mobile Devoloper</sub>
+        </a>
+      </td>
+  </table>
+</center>
 
-To learn more about Next.js, take a look at the following resources:
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Distributed under the [MIT](/LICENSE) License.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>
