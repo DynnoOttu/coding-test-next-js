@@ -26,24 +26,6 @@
 
 
 
-
-# Developer
-
-<center>
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/DynnoOttu">
-          <img width="100" src="https://res.cloudinary.com/dzs9aijqab/image/upload/v1685061849/recipes/kbgsfitfo3x2aikonhng.jpg" alt="Dynno"><br/>
-          <sub><b>Dynno Yohanis Ottu</b></sub> <br/>
-          <sub>Back End Web Developer | Front End Web Developer | Mobile Devoloper</sub>
-        </a>
-      </td>
-  </table>
-</center>
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## License
 
 Distributed under the [MIT](/LICENSE) License.
